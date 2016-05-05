@@ -1,0 +1,20 @@
+<% if @result %>
+  all:
+  <p>
+    <%= @all%>
+  </p>
+  last :
+  <p>
+    <%= @last_month%>
+  </p>
+  remember these?
+  <p>
+    <%= @result %>
+  </p>
+<% else %>
+  <%= form_tag("/search", method: "get") do %>
+    <%= label_tag(:username) %>
+    <%= text_field_tag(:username) %>
+    <%= submit_tag("go") %>
+  <% end %>
+<% end %>
