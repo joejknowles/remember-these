@@ -1,16 +1,9 @@
-<% if @result %>
-  all:
-  <p>
-    <%= @all%>
-  </p>
-  last :
-  <p>
-    <%= @last_month%>
-  </p>
-  remember these?
-  <p>
-    <%= @result %>
-  </p>
+<h3 style="float: right; margin: 0 25px;"><a href="/">HOME</a></h3>
+<% if @results %>
+  <h1>Remember These?</h1>
+  <div>
+    <%= render partial: 'results', locals: { results: @results } %>
+  </div>
 <% else %>
   <%= form_tag("/search", method: "get") do %>
     <%= label_tag(:username) %>

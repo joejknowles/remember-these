@@ -1,0 +1,10 @@
+<div style='display: inline-block;'>
+  <a href="<%= result['url'] %>"><img src="<%= result['image'].select { |img| img['size'] == 'extralarge' }.first['#text'] %>"/></a>
+  <div style='display: block;' >
+    <a href="<%= result['url'] %>">
+      <h2 style="text-align: center; margin-top:5px;">
+        <%= result['name'].length > 25 ? result['name'][0..24] + '...' : result['name'] %>
+      </h2>
+    </a>
+  </div>
+</div>
