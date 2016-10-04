@@ -16,10 +16,7 @@ class HomeController < ApplicationController
   end
 
   def last_month
-    JSON.parse(open("http://ws.audioscrobbler.com/2.0/?method=user.gettopartists&user=#{@username}&period=1month&api_key=4b62ea447ec4381e040a1bea57bc2a57&format=json").read)['topartists']['artist']  end
-
-  def last_week
-    JSON.parse(open("http://ws.audioscrobbler.com/2.0/?method=user.getweeklyartistchart&user=#{@username}&api_key=4b62ea447ec4381e040a1bea57bc2a57&format=json").read)['weeklyartistchart']['artist']
+    JSON.parse(open("http://ws.audioscrobbler.com/2.0/?method=user.gettopartists&user=#{@username}&period=1month&api_key=4b62ea447ec4381e040a1bea57bc2a57&format=json").read)['topartists']['artist']
   end
 
   def most_missed
